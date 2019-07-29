@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PiLight</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css">
+    `<script>
+     $(document).ready(function() {
+        $(".colour_picker").spectrum({
+          color: "#f00"
+        });
+    });
+   </script>
+
+  </head>
+  <body>
+    <section class="hero is-medium is-primary is-medium">
+      <div class="hero-body">
+        <h1 class="title">
+          PiLight
+        </h1>
+        <h2 class="subtitle">
+          LEDs Controlled by a raspberryPi running Flask
+        </h2>
+      </div>
+    </section>
+    <div class="container">
+      <div class="notification">
+        This Page is under development
+      </div>
+    </div>
+    <div class="level"></div>
+    <form method="post">
+      <div class="level">
+        <div class="level-item">
+          <input type="submit" name="state_button" value="On" class="button is-large">
+        </div>
+        <div class="level-item">
+          <input type="submit" name="state_button" value="Off" class="button is-large">
+        </div>
+      </div>
+      <div class="level">
+        <div class="level-item">
+          <input type="submit" name="state_button" value="Red" class="button is-large">
+        </div>
+        <div class="level-item">
+          <input type="submit" name="state_button" value="Blue" class="button is-large">
+        </div>
+        <div class="level-item">
+          <input type="submit" name="state_button" value="Green" class="button is-large">
+        </div>
+        <div class="level-item">
+          <input type="submit" name="state_button" value="Fade" class="button is-large">
+        </div>
+      </div>
+      <div class="level">
+        <div class="level-item">
+          <input type="range" min="0" max="255" value="100" class="slider" id="myRange">
+        </div>
+      </div>
+      <div class="level">
+        <div class="level-item">
+          <input type='text' class="colour_picker" />
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
