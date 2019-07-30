@@ -19,6 +19,9 @@ def index():
             led.colour('Green')
         elif request.form['state_button'] == 'Fade':
             led.fade()
+
+        slider = request.form["brightnessSlider"]
+        print(slider)
     return render_template('index.html')
 
 

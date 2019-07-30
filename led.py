@@ -9,6 +9,7 @@ import serial
 
 PORT = '/dev/ttyACM0'
 BAUD_RATE = 9600
+DEBUG = True
 
 OFF = b'0'
 ON = b'1'
@@ -20,20 +21,33 @@ colours = {
     'Blue': b'4',
 }
 
-serialPort = serial.Serial(PORT, BAUD_RATE)
+if not DEBUG:
+    serialPort = serial.Serial(PORT, BAUD_RATE)
 
 
 def on():
-    serialPort.write(ON)
+    if DEBUG:
+        print("On")
+    else:
+        serialPort.write(ON)
 
 
 def off():
-    serialPort.write(OFF)
+    if DEBUG:
+        print("Off")
+    else:
+        serialPort.write(OFF)
 
 
 def colour(c):
-    serialPort.write(colours[c])
+    if DEBUG:
+        print(c)
+    else:
+        serialPort.write(colours[c])
 
 
 def fade():
-    serialPort.write(FADE)
+    if DEBUG:
+        print("Fade")
+    else:
+        serialPort.write(FADE)
